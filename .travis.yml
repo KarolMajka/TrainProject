@@ -1,0 +1,12 @@
+language: objective-c
+osx_image: xcode8.3
+#before_install:
+#  - gem install cocoapods --pre
+podfile: Podfile
+install:
+- pod repo update
+- pod install
+#- pod update
+xcode_workspace: TrainProject.xcworkspace
+xcode_scheme: TrainProject
+script: xcodebuild -workspace "TrainProject.xcworkspace" -scheme "TrainProject" -sdk iphonesimulator -configuration Debug build
