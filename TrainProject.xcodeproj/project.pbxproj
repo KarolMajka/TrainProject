@@ -13,6 +13,14 @@
 		A3B63E5E1F00EC9600EF9AFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3B63E5C1F00EC9600EF9AFC /* Main.storyboard */; };
 		A3B63E601F00EC9600EF9AFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3B63E5F1F00EC9600EF9AFC /* Assets.xcassets */; };
 		A3B63E631F00EC9600EF9AFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3B63E611F00EC9600EF9AFC /* LaunchScreen.storyboard */; };
+		A3B63E6B1F00F09900EF9AFC /* RestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B63E6A1F00F09900EF9AFC /* RestManager.swift */; };
+		A3B63E6D1F00F11700EF9AFC /* TrainStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B63E6C1F00F11700EF9AFC /* TrainStation.swift */; };
+		A3B63E751F00F57B00EF9AFC /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B63E741F00F57B00EF9AFC /* RealmManager.swift */; };
+		A3B63E771F01016700EF9AFC /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B63E761F01016700EF9AFC /* SearchTextField.swift */; };
+		A3B63E811F01A51700EF9AFC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3B63E831F01A51700EF9AFC /* Localizable.strings */; };
+		A3B63E851F01A89600EF9AFC /* ExpandViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B63E841F01A89600EF9AFC /* ExpandViewContainer.swift */; };
+		A3B63E871F01A91E00EF9AFC /* TrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B63E861F01A91E00EF9AFC /* TrainViewController.swift */; };
+		A3B63E891F025B1E00EF9AFC /* ProtocolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B63E881F025B1E00EF9AFC /* ProtocolViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,14 @@
 		A3B63E5F1F00EC9600EF9AFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3B63E621F00EC9600EF9AFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3B63E641F00EC9600EF9AFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3B63E6A1F00F09900EF9AFC /* RestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestManager.swift; sourceTree = "<group>"; };
+		A3B63E6C1F00F11700EF9AFC /* TrainStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainStation.swift; sourceTree = "<group>"; };
+		A3B63E741F00F57B00EF9AFC /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		A3B63E761F01016700EF9AFC /* SearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
+		A3B63E821F01A51700EF9AFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A3B63E841F01A89600EF9AFC /* ExpandViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandViewContainer.swift; sourceTree = "<group>"; };
+		A3B63E861F01A91E00EF9AFC /* TrainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainViewController.swift; sourceTree = "<group>"; };
+		A3B63E881F025B1E00EF9AFC /* ProtocolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolViewController.swift; sourceTree = "<group>"; };
 		B5758835D486ACDE5BD984B9 /* Pods-TrainProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrainProject/Pods-TrainProject.debug.xcconfig"; sourceTree = "<group>"; };
 		CF51BF89398D26C04E833B3A /* Pods-TrainProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrainProject/Pods-TrainProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,14 +77,86 @@
 		A3B63E571F00EC9600EF9AFC /* TrainProject */ = {
 			isa = PBXGroup;
 			children = (
-				A3B63E581F00EC9600EF9AFC /* AppDelegate.swift */,
-				A3B63E5A1F00EC9600EF9AFC /* ViewController.swift */,
-				A3B63E5C1F00EC9600EF9AFC /* Main.storyboard */,
-				A3B63E5F1F00EC9600EF9AFC /* Assets.xcassets */,
-				A3B63E611F00EC9600EF9AFC /* LaunchScreen.storyboard */,
-				A3B63E641F00EC9600EF9AFC /* Info.plist */,
+				A3B63E711F00F14200EF9AFC /* Application */,
+				A3B63E6F1F00F12400EF9AFC /* Controllers */,
+				A3B63E7D1F01A2BA00EF9AFC /* Library */,
 			);
 			path = TrainProject;
+			sourceTree = "<group>";
+		};
+		A3B63E6E1F00F11C00EF9AFC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A3B63E6A1F00F09900EF9AFC /* RestManager.swift */,
+				A3B63E741F00F57B00EF9AFC /* RealmManager.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		A3B63E6F1F00F12400EF9AFC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A3B63E5A1F00EC9600EF9AFC /* ViewController.swift */,
+				A3B63E881F025B1E00EF9AFC /* ProtocolViewController.swift */,
+				A3B63E861F01A91E00EF9AFC /* TrainViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A3B63E701F00F12E00EF9AFC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A3B63E6C1F00F11700EF9AFC /* TrainStation.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A3B63E711F00F14200EF9AFC /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A3B63E581F00EC9600EF9AFC /* AppDelegate.swift */,
+				A3B63E641F00EC9600EF9AFC /* Info.plist */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		A3B63E721F00F4DB00EF9AFC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A3B63E5C1F00EC9600EF9AFC /* Main.storyboard */,
+				A3B63E611F00EC9600EF9AFC /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		A3B63E731F00F53E00EF9AFC /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A3B63E841F01A89600EF9AFC /* ExpandViewContainer.swift */,
+				A3B63E761F01016700EF9AFC /* SearchTextField.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		A3B63E7D1F01A2BA00EF9AFC /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				A3B63E7E1F01A30500EF9AFC /* Resources */,
+				A3B63E701F00F12E00EF9AFC /* Models */,
+				A3B63E721F00F4DB00EF9AFC /* Views */,
+				A3B63E6E1F00F11C00EF9AFC /* Services */,
+				A3B63E731F00F53E00EF9AFC /* Helper */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		A3B63E7E1F01A30500EF9AFC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A3B63E5F1F00EC9600EF9AFC /* Assets.xcassets */,
+				A3B63E831F01A51700EF9AFC /* Localizable.strings */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		C6C4963BC23170CFFF138563 /* Frameworks */ = {
@@ -151,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3B63E811F01A51700EF9AFC /* Localizable.strings in Resources */,
 				A3B63E631F00EC9600EF9AFC /* LaunchScreen.storyboard in Resources */,
 				A3B63E601F00EC9600EF9AFC /* Assets.xcassets in Resources */,
 				A3B63E5E1F00EC9600EF9AFC /* Main.storyboard in Resources */,
@@ -212,8 +301,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3B63E6B1F00F09900EF9AFC /* RestManager.swift in Sources */,
+				A3B63E891F025B1E00EF9AFC /* ProtocolViewController.swift in Sources */,
+				A3B63E871F01A91E00EF9AFC /* TrainViewController.swift in Sources */,
+				A3B63E751F00F57B00EF9AFC /* RealmManager.swift in Sources */,
+				A3B63E6D1F00F11700EF9AFC /* TrainStation.swift in Sources */,
+				A3B63E851F01A89600EF9AFC /* ExpandViewContainer.swift in Sources */,
 				A3B63E5B1F00EC9600EF9AFC /* ViewController.swift in Sources */,
 				A3B63E591F00EC9600EF9AFC /* AppDelegate.swift in Sources */,
+				A3B63E771F01016700EF9AFC /* SearchTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +330,14 @@
 				A3B63E621F00EC9600EF9AFC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A3B63E831F01A51700EF9AFC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A3B63E821F01A51700EF9AFC /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -280,7 +384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -325,7 +429,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -341,6 +445,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7KM42EHCAN;
 				INFOPLIST_FILE = TrainProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.karolmajka.TrainProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -355,6 +460,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7KM42EHCAN;
 				INFOPLIST_FILE = TrainProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.karolmajka.TrainProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -381,6 +487,7 @@
 				A3B63E691F00EC9600EF9AFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  TrainProject
+
+  Created by Karol Majka on 26/06/2017.
+  Copyright © 2017 Karol Majka. All rights reserved.
+*/
+
+"AppName" = "Train Project";
+"ExpireMessage" = "Some train stations can constain expired informations. You should enable the Internet and refresh data.";

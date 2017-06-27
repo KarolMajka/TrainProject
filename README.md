@@ -14,4 +14,4 @@ Then in project file:
 ## Pods used
 - Alamofire
 - Alamofire Object Mapper
-- Cache
+- RealmSwift

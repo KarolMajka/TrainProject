@@ -8,5 +8,5 @@ target 'TrainProject' do
   # Pods for TrainProject
   pod 'Alamofire'
   pod 'AlamofireObjectMapper'
-  pod 'Cache'
+  pod 'RealmSwift'
 end
