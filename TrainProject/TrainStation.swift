@@ -18,7 +18,9 @@ class TrainStation: NSObject, Mappable {
     var name: String = ""
     
     required init?(map: Map) {
-        if map.JSON["id"] == nil || map.JSON["latitude"] as? CGFloat == 0 || map.JSON["longitude"] as? CGFloat == 0 || map.JSON["name"] == nil {
+        if map.JSON["id"] == nil || map.JSON["latitude"] as? CGFloat == 0 ||
+            map.JSON["longitude"] as? CGFloat == 0 || map.JSON["name"] == nil ||
+            map.JSON["latitude"] as? CGFloat == nil || map.JSON["longitude"] as? CGFloat == nil  {
             return nil
         }
     }
