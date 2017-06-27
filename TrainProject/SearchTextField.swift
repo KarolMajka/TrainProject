@@ -12,26 +12,30 @@ class SearchTextField: NSObject, UITextFieldDelegate, UITableViewDelegate, UITab
     
     
     //MARK: - Variables
-    var textField: UITextField!
+    var textField: [UITextField] = []
     var tableView: UITableView!
     var delegateMethods: ProtocolViewController!
     var array: [TrainStation] = []
     var filteredArray: [TrainStation] = []
-    var selected = false
-    var selectedItem: TrainStation?
+    var selected = [false, false]
+    var selectedItem: [TrainStation?] = [nil, nil]
     
     
     //MARK: - Init methods
-    init(textField: UITextField, tableView: UITableView, protocol delegateMethods: ProtocolViewController) {
+    init(first firstTextField: UITextField, second secondTextField: UITextField, tableView: UITableView, protocol delegateMethods: ProtocolViewController) {
         super.init()
-        
-        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        firstTextField.tag = 100
+        secondTextField.tag = 101
+        firstTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        secondTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         tableView.isHidden = true
         
-        textField.delegate = self
+        firstTextField.delegate = self
+        secondTextField.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
-        self.textField = textField
+        self.textField.append(firstTextField)
+        self.textField.append(secondTextField)
         self.tableView = tableView
         self.delegateMethods = delegateMethods
     }
@@ -39,12 +43,34 @@ class SearchTextField: NSObject, UITextFieldDelegate, UITableViewDelegate, UITab
     
     //MARK: - TextField methods
     func textFieldDidChange(_ textField: UITextField) {
-        self.selected = false
+        self.selected[textField.tag-100] = false
         self.delegateMethods.itemDidChange()
-        if textField.text == nil || textField.text == "" {
+        self.updateTableView(textField)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.updateTableView(textField)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.textFieldFindItem(textField)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.textFieldFindItem(textField)
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func updateTableView(_ textField: UITextField) {
+        if textField.text == nil {
             self.tableView.isHidden = true
+        } else if textField.text == "" {
+            self.filteredArray = self.array
+            self.tableView.isHidden = false
+            self.tableView.reloadData()
         } else {
-            self.filteredArray = array.filter({ trainStation in
+            self.filteredArray = self.array.filter({ trainStation in
                 if trainStation.name.lowercased().removeAccents().contains(textField.text!.lowercased().removeAccents()) {
                     return true
                 } else {
@@ -60,24 +86,14 @@ class SearchTextField: NSObject, UITextFieldDelegate, UITableViewDelegate, UITab
         }
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        self.textFieldFindItem(textField)
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.textFieldFindItem(textField)
-        textField.resignFirstResponder()
-        return true
-    }
-    
     func textFieldFindItem(_ textField: UITextField) {
         self.tableView.isHidden = true
         if let text = textField.text?.lowercased().removeAccents() {
             for item in filteredArray {
                 if item.name.lowercased().removeAccents() == text {
                     textField.text = item.name
-                    self.selected = true
-                    self.selectedItem = item
+                    self.selected[textField.tag-100] = true
+                    self.selectedItem[textField.tag-100] = item
                     self.delegateMethods.itemDidChange()
                     break
                 }
@@ -85,14 +101,23 @@ class SearchTextField: NSObject, UITextFieldDelegate, UITableViewDelegate, UITab
         }
     }
     
+    func getCurrentTextField() -> UITextField {
+        if self.textField[0].isFirstResponder {
+            return self.textField[0]
+        } else {
+            return self.textField[1]
+        }
+    }
+    
     
     //MARK: - TableView methods
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = self.filteredArray[indexPath.row]
-        self.textField.text = item.name
-        self.selected = true
-        self.selectedItem = item
-        self.textField.resignFirstResponder()
+        let textField = self.getCurrentTextField()
+        textField.text = item.name
+        self.selected[textField.tag-100] = true
+        self.selectedItem[textField.tag-100] = item
+        textField.resignFirstResponder()
         tableView.isHidden = true
         self.delegateMethods.itemDidChange()
     }

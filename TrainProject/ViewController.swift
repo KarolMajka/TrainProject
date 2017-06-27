@@ -13,9 +13,8 @@ class ViewController: UIViewController, ProtocolViewController {
     
     //MARK: - IBOutlets
     @IBOutlet var fromTextField: UITextField!
-    @IBOutlet var fromTableView: UITableView!
     @IBOutlet var toTextField: UITextField!
-    @IBOutlet var toTableView: UITableView!
+    @IBOutlet var tableView: UITableView!
     @IBOutlet var searchButton: UIButton!
     @IBOutlet var visualEffectView: UIVisualEffectView!
     @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
@@ -25,8 +24,7 @@ class ViewController: UIViewController, ProtocolViewController {
     //MARK: - Variables
     let restManager = RestManager()
     let realmManager = RealmManager()
-    var fromSearchTextField: SearchTextField!
-    var toSearchTextField: SearchTextField!
+    var searchTextField: SearchTextField!
     var trainStations: [TrainStation] = []
     
     
@@ -34,13 +32,10 @@ class ViewController: UIViewController, ProtocolViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.fromSearchTextField = SearchTextField(textField: self.fromTextField,
-                                                   tableView: self.fromTableView,
+        self.searchTextField = SearchTextField(first: self.fromTextField, second: self.toTextField,
+                                                   tableView: self.tableView,
                                                    protocol: self as ProtocolViewController)
-        self.toSearchTextField = SearchTextField(textField: self.toTextField,
-                                                 tableView: self.toTableView,
-                                                 protocol: self as ProtocolViewController)
-        
+
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapVisualEffectView(_:)))
         self.visualEffectView.addGestureRecognizer(tap)
         
@@ -64,8 +59,7 @@ class ViewController: UIViewController, ProtocolViewController {
     
     func update(trainStations: [TrainStation]) {
         self.trainStations = trainStations
-        self.fromSearchTextField.array = trainStations
-        self.toSearchTextField.array = trainStations
+        self.searchTextField.array = trainStations
     }
     
     func downloadDataFromRemote() {
@@ -125,8 +119,8 @@ class ViewController: UIViewController, ProtocolViewController {
     
     //MARK: - IBOutlet actions
     @IBAction func tapSearchButton() {
-        if let firstItem = self.fromSearchTextField.selectedItem,
-            let secondItem = self.toSearchTextField.selectedItem {
+        if let firstItem = self.searchTextField.selectedItem[0],
+            let secondItem = self.searchTextField.selectedItem[1] {
             self.performSegue(withIdentifier: "TrainViewController",
                               sender: [firstItem, secondItem])
         }
@@ -146,7 +140,7 @@ class ViewController: UIViewController, ProtocolViewController {
     
     //MARK: - ProtocolViewController methods
     func itemDidChange() {
-        if self.fromSearchTextField.selected && self.toSearchTextField.selected {
+        if self.searchTextField.selected[0] && self.searchTextField.selected[1] {
             self.searchButton.alpha = 1
             self.searchButton.isEnabled = true
         } else {
