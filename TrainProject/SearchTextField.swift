@@ -44,7 +44,6 @@ class SearchTextField: NSObject, UITextFieldDelegate, UITableViewDelegate, UITab
         if textField.text == nil || textField.text == "" {
             self.tableView.isHidden = true
         } else {
-            self.tableView.isHidden = false
             self.filteredArray = array.filter({ trainStation in
                 if trainStation.name.lowercased().removeAccents().contains(textField.text!.lowercased().removeAccents()) {
                     return true
@@ -52,6 +51,11 @@ class SearchTextField: NSObject, UITextFieldDelegate, UITableViewDelegate, UITab
                     return false
                 }
             })
+            if self.filteredArray.count == 0 {
+                self.tableView.isHidden = true
+            } else {
+                self.tableView.isHidden = false
+            }
             self.tableView.reloadData()
         }
     }
@@ -80,6 +84,7 @@ class SearchTextField: NSObject, UITextFieldDelegate, UITableViewDelegate, UITab
             }
         }
     }
+    
     
     //MARK: - TableView methods
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
