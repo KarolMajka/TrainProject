@@ -8,9 +8,6 @@
 
 import UIKit
 
-//TODO: Add observer for trainStations change
-//TODO: Change colors in StoryBoard
-
 class ViewController: UIViewController, ProtocolViewController {
 
     

@@ -171,6 +171,14 @@
                                     <constraint firstItem="9AE-ek-UyX" firstAttribute="centerY" secondItem="C0g-39-La4" secondAttribute="centerY" constant="6" id="dge-1g-Y0W"/>
                                     <constraint firstAttribute="height" constant="75" id="vv8-vM-LnW"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="0.0" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.40000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -262,6 +270,14 @@
                                     <constraint firstItem="kKx-Oe-wRu" firstAttribute="leading" secondItem="xnC-Jw-KXx" secondAttribute="leading" id="j4v-GI-pWu"/>
                                     <constraint firstItem="hYh-XP-Unq" firstAttribute="centerY" secondItem="xnC-Jw-KXx" secondAttribute="centerY" constant="6" id="yVw-Nx-pKS"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="0.0" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.40000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
