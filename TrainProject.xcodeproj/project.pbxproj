@@ -40,6 +40,9 @@
 		A3B63E841F01A89600EF9AFC /* ExpandViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandViewContainer.swift; sourceTree = "<group>"; };
 		A3B63E861F01A91E00EF9AFC /* TrainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainViewController.swift; sourceTree = "<group>"; };
 		A3B63E881F025B1E00EF9AFC /* ProtocolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolViewController.swift; sourceTree = "<group>"; };
+		A3EB28161F02A9D700B1CB83 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; };
+		A3EB28171F02A9D700B1CB83 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		A3EB28181F02A9D700B1CB83 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B5758835D486ACDE5BD984B9 /* Pods-TrainProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrainProject/Pods-TrainProject.debug.xcconfig"; sourceTree = "<group>"; };
 		CF51BF89398D26C04E833B3A /* Pods-TrainProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrainProject/Pods-TrainProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -223,6 +226,7 @@
 			knownRegions = (
 				en,
 				Base,
+				pl,
 			);
 			mainGroup = A3B63E4C1F00EC9600EF9AFC;
 			productRefGroup = A3B63E561F00EC9600EF9AFC /* Products */;
@@ -320,6 +324,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A3B63E5D1F00EC9600EF9AFC /* Base */,
+				A3EB28161F02A9D700B1CB83 /* pl */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A3B63E621F00EC9600EF9AFC /* Base */,
+				A3EB28171F02A9D700B1CB83 /* pl */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -336,6 +342,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A3B63E821F01A51700EF9AFC /* Base */,
+				A3EB28181F02A9D700B1CB83 /* pl */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -347,6 +354,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -398,6 +406,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

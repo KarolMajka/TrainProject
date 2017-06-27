@@ -7,4 +7,4 @@
 */
 
 "AppName" = "Koleo";
-"ExpireMessage" = "Some train stations can constain expired informations. You should enable the Internet and refresh data.";
+"ExpireMessage" = "Niektóre stacje kolejowe mogą zawierać nieaktualne dane. Powinieneś włączyć internet i odświeżyć je";
