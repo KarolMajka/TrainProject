@@ -12,7 +12,7 @@ import AlamofireObjectMapper
 
 class RestManager {
     
-    func getTrainStations(block: @escaping ([TrainStation])->(), error: @escaping (Int?) ->()) {
+    public func getTrainStations(block: @escaping ([TrainStation])->(), error: @escaping (Int?) ->()) {
         let backgroundQueueForREST = DispatchQueue(label: "com.app.queueForRest",qos: .background, target: nil)
         let url = "https://koleo.pl/api/android/v1/stations.json"
         

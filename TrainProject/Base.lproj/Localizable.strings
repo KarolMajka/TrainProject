@@ -8,3 +8,4 @@
 
 "AppName" = "Koleo";
 "ExpireMessage" = "Some train stations can constain expired informations. You should enable the Internet and refresh data.";
+"TheSame" = "Stations can not be the same";

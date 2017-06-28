@@ -16,6 +16,7 @@ class TrainStation: NSObject, Mappable {
     var latitude: CGFloat = 0
     var longitude: CGFloat = 0
     var name: String = ""
+    var recentlySelected: Bool = false
     
     required init?(map: Map) {
         if map.JSON["id"] == nil || map.JSON["latitude"] as? CGFloat == 0 ||
@@ -25,11 +26,12 @@ class TrainStation: NSObject, Mappable {
         }
     }
 
-    init(id: Int, latitude: CGFloat, longitude: CGFloat, name: String) {
+    init(id: Int, latitude: CGFloat, longitude: CGFloat, name: String, recentlySelected: Bool) {
         self.id = id
         self.latitude = latitude
         self.longitude = longitude
         self.name = name
+        self.recentlySelected = recentlySelected
     }
     
     func mapping(map: Map) {

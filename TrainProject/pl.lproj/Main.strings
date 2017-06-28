@@ -2,14 +2,17 @@
 /* Class = "UILabel"; text = "Unable to download data. Tap to reload."; ObjectID = "5CU-XF-OxK"; */
 "5CU-XF-OxK.text" = "Niemożna ściągnąć danych. Dotknij, aby odświeżyć.";
 
-/* Class = "UILabel"; text = "To:"; ObjectID = "63N-7f-0US"; */
-"63N-7f-0US.text" = "Do:";
-
-/* Class = "UILabel"; text = "Train Project"; ObjectID = "9AE-ek-UyX"; */
+/* Class = "UILabel"; text = "Koleo"; ObjectID = "9AE-ek-UyX"; */
 "9AE-ek-UyX.text" = "Koleo";
 
 /* Class = "UILabel"; text = "Count"; ObjectID = "Fl7-7H-zrA"; */
 "Fl7-7H-zrA.text" = "Count";
+
+/* Class = "UITextField"; placeholder = "From"; ObjectID = "Gdm-bn-zEK"; */
+"Gdm-bn-zEK.placeholder" = "Do";
+
+/* Class = "UITextField"; placeholder = "To"; ObjectID = "JPK-5r-7Zi"; */
+"JPK-5r-7Zi.placeholder" = "Z";
 
 /* Class = "UILabel"; text = "Distance beetwen stations:"; ObjectID = "KFc-wq-I2Z"; */
 "KFc-wq-I2Z.text" = "Odległość między stacjami:";
@@ -17,8 +20,5 @@
 /* Class = "UIButton"; normalTitle = "Search"; ObjectID = "LSS-DF-HhF"; */
 "LSS-DF-HhF.normalTitle" = "Szukaj";
 
-/* Class = "UILabel"; text = "From:"; ObjectID = "egO-RF-5gI"; */
-"egO-RF-5gI.text" = "Z:";
-
-/* Class = "UILabel"; text = "Train Project"; ObjectID = "hYh-XP-Unq"; */
+/* Class = "UILabel"; text = "Koleo"; ObjectID = "hYh-XP-Unq"; */
 "hYh-XP-Unq.text" = "Koleo";

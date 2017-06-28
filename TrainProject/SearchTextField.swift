@@ -63,27 +63,27 @@ class SearchTextField: NSObject, UITextFieldDelegate, UITableViewDelegate, UITab
     }
     
     func updateTableView(_ textField: UITextField) {
-        if textField.text == nil {
+        guard let text = textField.text?.lowercased().removeAccents() else {
             self.tableView.isHidden = true
-        } else if textField.text == "" {
-            self.filteredArray = self.array
-            self.tableView.isHidden = false
-            self.tableView.reloadData()
+            return
+        }
+        if text == "" {
+            self.filteredArray = self.array.filter({$0.recentlySelected})
         } else {
             self.filteredArray = self.array.filter({ trainStation in
-                if trainStation.name.lowercased().removeAccents().contains(textField.text!.lowercased().removeAccents()) {
+                if trainStation.name.lowercased().removeAccents().contains(text) {
                     return true
                 } else {
                     return false
                 }
             })
-            if self.filteredArray.count == 0 {
-                self.tableView.isHidden = true
-            } else {
-                self.tableView.isHidden = false
-            }
-            self.tableView.reloadData()
         }
+        if self.filteredArray.count == 0 {
+            self.tableView.isHidden = true
+        } else {
+            self.tableView.isHidden = false
+        }
+        self.tableView.reloadData()
     }
     
     func textFieldFindItem(_ textField: UITextField) {
@@ -132,6 +132,8 @@ class SearchTextField: NSObject, UITextFieldDelegate, UITableViewDelegate, UITab
             cell = UITableViewCell(style: .default, reuseIdentifier: "DefaultCell")
         }
         cell!.textLabel?.text = self.filteredArray[indexPath.row].name
+        cell!.textLabel?.font = UIFont.systemFont(ofSize: 14)
+        cell!.textLabel?.adjustsFontSizeToFitWidth = true
         return cell!
     }
 }

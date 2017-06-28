@@ -8,3 +8,4 @@
 
 "AppName" = "Koleo";
 "ExpireMessage" = "Niektóre stacje kolejowe mogą zawierać nieaktualne dane. Powinieneś włączyć internet i odświeżyć je";
+"TheSame" = "Stacje nie mogą być takie same.";

@@ -67,12 +67,18 @@ class ViewController: UIViewController, ProtocolViewController {
         self.errorLabel.isHidden = true
         self.activityIndicatorView.startAnimating()
         
-        self.restManager.getTrainStations(block: { model in
+        self.restManager.getTrainStations(block: { models in
             DispatchQueue.main.async {
-                self.update(trainStations: model)
+                for model in models {
+                    if let trainStation = self.trainStations.first(where: {$0.id == model.id}) {
+                        model.recentlySelected = trainStation.recentlySelected
+                    }
+                }
+                self.update(trainStations: models)
                 self.hideVisualEffectView()
             }
-            self.realmManager.updateData(trainStations: model)
+            self.realmManager.updateData(trainStations: models)
+            self.realmManager.deleteTrainStations(all: false)
         }, error: { (responseCode: Int?) in
             DispatchQueue.main.async {
                 if self.trainStations.count == 0 {
@@ -121,8 +127,18 @@ class ViewController: UIViewController, ProtocolViewController {
     @IBAction func tapSearchButton() {
         if let firstItem = self.searchTextField.selectedItem[0],
             let secondItem = self.searchTextField.selectedItem[1] {
-            self.performSegue(withIdentifier: "TrainViewController",
-                              sender: [firstItem, secondItem])
+            firstItem.recentlySelected = true
+            secondItem.recentlySelected = true
+            self.realmManager.updateData(trainStations: [firstItem, secondItem])
+            
+            if firstItem.id == secondItem.id {
+                self.showAlert(title: NSLocalizedString("AppName", comment: ""),
+                               message: NSLocalizedString("TheSame", comment: ""),
+                               action: nil)
+            } else {
+                self.performSegue(withIdentifier: "TrainViewController",
+                                  sender: [firstItem, secondItem])
+            }
         }
     }
     

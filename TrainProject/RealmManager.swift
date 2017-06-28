@@ -11,7 +11,7 @@ import RealmSwift
 
 class RealmManager {
 
-    func updateData(trainStations model: [TrainStation]) {
+    public func updateData(trainStations model: [TrainStation]) {
         var realmTrainStations: [RealmTrainStation] = []
         for trainStation in model {
             realmTrainStations.append(self.create(realmTrainStation: trainStation))
@@ -20,19 +20,22 @@ class RealmManager {
         let realm = try! Realm()
         try! realm.write {
             realm.add(realmTrainStations, update: true)
-            realm.delete(realm.objects(RealmTrainStation.self).filter("expiry <= %@", Date()))
         }
     }
     
-    func deleteTrainStations() {
+    public func deleteTrainStations(all: Bool) {
         let realm = try! Realm()
         try! realm.write {
-            realm.delete(realm.objects(RealmTrainStation.self))
+            if all {
+                realm.delete(realm.objects(RealmTrainStation.self))
+            } else {
+                realm.delete(realm.objects(RealmTrainStation.self).filter("expiry <= %@", Date()))
+            }
         }
     }
     
     
-    func haveExpiredTrainStations() -> Bool {
+    public func haveExpiredTrainStations() -> Bool {
         let realm = try! Realm()
         if realm.objects(RealmTrainStation.self)
             .filter("expiry <= %@", Date())
@@ -43,7 +46,7 @@ class RealmManager {
         }
     }
     
-    func getTrainStations() -> [TrainStation]? {
+    public func getTrainStations() -> [TrainStation]? {
         let realm = try! Realm()
         let objects = realm.objects(RealmTrainStation.self)
         
@@ -55,7 +58,8 @@ class RealmManager {
             array.append(TrainStation(id: object.id,
                                       latitude: object.latitude,
                                       longitude: object.longitude,
-                                      name: object.name))
+                                      name: object.name,
+                                      recentlySelected: object.recentlySelected))
         }
         return array
     }
@@ -67,6 +71,7 @@ class RealmManager {
         realmTrainStation.longitude = model.longitude
         realmTrainStation.name = model.name
         realmTrainStation.expiry = Date().addingTimeInterval(24*60*60)
+        realmTrainStation.recentlySelected = model.recentlySelected
         return realmTrainStation
     }
     
@@ -80,6 +85,7 @@ class RealmTrainStation: Object {
     dynamic var latitude: CGFloat = 0
     dynamic var longitude: CGFloat = 0
     dynamic var name: String = ""
+    dynamic var recentlySelected: Bool = false
     dynamic var expiry: Date = Date()
     
     override class func primaryKey() -> String {
