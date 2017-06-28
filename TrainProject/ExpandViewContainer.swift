@@ -53,8 +53,3 @@ class ExpandViewContainer: UIView {
     }
 }
 
-extension Array {
-    public subscript (safe index: Index) -> Element? {
-        return index.distance(to: endIndex) > 0 ? self[index] : nil
-    }
-}

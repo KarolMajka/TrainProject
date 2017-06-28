@@ -21,6 +21,7 @@
 		A3B63E851F01A89600EF9AFC /* ExpandViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B63E841F01A89600EF9AFC /* ExpandViewContainer.swift */; };
 		A3B63E871F01A91E00EF9AFC /* TrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B63E861F01A91E00EF9AFC /* TrainViewController.swift */; };
 		A3B63E891F025B1E00EF9AFC /* ProtocolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B63E881F025B1E00EF9AFC /* ProtocolViewController.swift */; };
+		A3EB28371F038B7300B1CB83 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EB28361F038B7300B1CB83 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		A3EB28161F02A9D700B1CB83 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; };
 		A3EB28171F02A9D700B1CB83 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A3EB28181F02A9D700B1CB83 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A3EB28361F038B7300B1CB83 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B5758835D486ACDE5BD984B9 /* Pods-TrainProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrainProject/Pods-TrainProject.debug.xcconfig"; sourceTree = "<group>"; };
 		CF51BF89398D26C04E833B3A /* Pods-TrainProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrainProject/Pods-TrainProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,6 +139,7 @@
 			children = (
 				A3B63E841F01A89600EF9AFC /* ExpandViewContainer.swift */,
 				A3B63E761F01016700EF9AFC /* SearchTextField.swift */,
+				A3EB28361F038B7300B1CB83 /* Extensions.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				A3B63E871F01A91E00EF9AFC /* TrainViewController.swift in Sources */,
 				A3B63E751F00F57B00EF9AFC /* RealmManager.swift in Sources */,
 				A3B63E6D1F00F11700EF9AFC /* TrainStation.swift in Sources */,
+				A3EB28371F038B7300B1CB83 /* Extensions.swift in Sources */,
 				A3B63E851F01A89600EF9AFC /* ExpandViewContainer.swift in Sources */,
 				A3B63E5B1F00EC9600EF9AFC /* ViewController.swift in Sources */,
 				A3B63E591F00EC9600EF9AFC /* AppDelegate.swift in Sources */,

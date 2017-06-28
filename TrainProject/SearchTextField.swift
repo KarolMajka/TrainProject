@@ -135,11 +135,3 @@ class SearchTextField: NSObject, UITextFieldDelegate, UITableViewDelegate, UITab
         return cell!
     }
 }
-
-extension String {
-    func removeAccents() -> String {
-        return self
-            .folding(options: .diacriticInsensitive, locale: .current)
-            .replacingOccurrences(of: "ł", with: "l")
-    }
-}
