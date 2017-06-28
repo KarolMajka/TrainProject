@@ -9,10 +9,10 @@
 "Fl7-7H-zrA.text" = "Count";
 
 /* Class = "UITextField"; placeholder = "From"; ObjectID = "Gdm-bn-zEK"; */
-"Gdm-bn-zEK.placeholder" = "Do";
+"Gdm-bn-zEK.placeholder" = "Z";
 
 /* Class = "UITextField"; placeholder = "To"; ObjectID = "JPK-5r-7Zi"; */
-"JPK-5r-7Zi.placeholder" = "Z";
+"JPK-5r-7Zi.placeholder" = "Do";
 
 /* Class = "UILabel"; text = "Distance beetwen stations:"; ObjectID = "KFc-wq-I2Z"; */
 "KFc-wq-I2Z.text" = "Odległość między stacjami:";
