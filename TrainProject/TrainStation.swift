@@ -10,14 +10,17 @@ import Foundation
 import ObjectMapper
 
 
-class TrainStation: NSObject, Mappable {
+class TrainStation: NSObject {
     
+    //MARK: - Variables
     var id: Int = 0
     var latitude: CGFloat = 0
     var longitude: CGFloat = 0
     var name: String = ""
     var recentlySelected: Bool = false
     
+    
+    //MARK: - Initialization
     required init?(map: Map) {
         if map.JSON["id"] == nil || map.JSON["latitude"] as? CGFloat == 0 ||
             map.JSON["longitude"] as? CGFloat == 0 || map.JSON["name"] == nil ||
@@ -33,7 +36,10 @@ class TrainStation: NSObject, Mappable {
         self.name = name
         self.recentlySelected = recentlySelected
     }
-    
+}
+
+//MARK: - Mappable
+extension TrainStation: Mappable {
     func mapping(map: Map) {
         id <- map["id"]
         latitude <- map["latitude"]
