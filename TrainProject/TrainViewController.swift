@@ -9,57 +9,6 @@
 import UIKit
 import MapKit
 
-class TrainViewController: UIViewController, MKMapViewDelegate {
-    
-    //MARK: - IBOutlets
-    @IBOutlet var countLabel: UILabel!
-    @IBOutlet var mapView: MKMapView!
-  
-    
-    //MARK: - Variables
-    var firstTrainStation: TrainStation!
-    var secondTrainStation: TrainStation!
-    fileprivate var firstPin: Pin!
-    fileprivate var secondPin: Pin!
-    
-    //MARK: - UIViewController methods
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.setMap()
-    }
-    
-    
-    //MARK: - MKMapView methods
-    func setMap() {
-        self.firstPin = createPin(title: self.firstTrainStation.name, latitude: self.firstTrainStation.latitude, longitude: self.firstTrainStation.longitude)
-        self.secondPin = createPin(title: self.secondTrainStation.name, latitude: self.secondTrainStation.latitude, longitude: self.secondTrainStation.longitude)
-        
-        self.mapView.addAnnotation(firstPin)
-        self.mapView.addAnnotation(secondPin)
-        self.mapView.showAnnotations([firstPin, secondPin], animated: true)
-        
-        self.calculateDistance()
-    }
-    
-    fileprivate func createPin(title: String, latitude: CGFloat, longitude: CGFloat) -> Pin {
-        return Pin(title: title,
-                           coordinate: CLLocationCoordinate2D(latitude: Double(latitude),
-                                                              longitude: Double(longitude)))
-    }
-    
-    func calculateDistance() {
-        let firstLocation = CLLocation(latitude: self.firstPin.coordinate.latitude, longitude: self.firstPin.coordinate.longitude)
-        let secondLocation = CLLocation(latitude: self.secondPin.coordinate.latitude, longitude: self.secondPin.coordinate.longitude)
-        let kilometers = firstLocation.distance(from: secondLocation) / 1000
-        self.countLabel.text = String(format:"%.0f", kilometers.rounded()) + " km"
-    }
-    
-    //MARK: - IBOutlet actions
-    @IBAction func tapBackButton() {
-        self.navigationController!.popViewController(animated: true)
-    }
-}
 
 //MARK:- Annotations Class
 fileprivate class Pin: NSObject, MKAnnotation {
@@ -72,3 +21,72 @@ fileprivate class Pin: NSObject, MKAnnotation {
         super.init()
     }
 }
+
+
+//MARK: - TrainViewController
+class TrainViewController: UIViewController {
+    
+    //MARK: - IBOutlets
+    @IBOutlet var countLabel: UILabel!
+    @IBOutlet var mapView: MKMapView!
+  
+    
+    //MARK: - Variables
+    public var firstTrainStation: TrainStation!
+    public var secondTrainStation: TrainStation!
+    fileprivate var firstPin: Pin!
+    fileprivate var secondPin: Pin!
+    
+    
+    //MARK: - Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.configure()
+    }
+}
+
+
+//MARK: - Configuration
+extension TrainViewController {
+    
+    //MARK: Fileprivate methods
+    fileprivate func configure() {
+        self.setMap()
+    }
+    
+    //MARK: Private methods
+    private func setMap() {
+        self.firstPin = createPin(title: self.firstTrainStation.name, latitude: self.firstTrainStation.latitude, longitude: self.firstTrainStation.longitude)
+        self.secondPin = createPin(title: self.secondTrainStation.name, latitude: self.secondTrainStation.latitude, longitude: self.secondTrainStation.longitude)
+        
+        self.mapView.addAnnotation(firstPin)
+        self.mapView.addAnnotation(secondPin)
+        self.mapView.showAnnotations([firstPin, secondPin], animated: true)
+        
+        self.calculateDistance()
+    }
+    
+    private func createPin(title: String, latitude: CGFloat, longitude: CGFloat) -> Pin {
+        return Pin(title: title,
+                   coordinate: CLLocationCoordinate2D(latitude: Double(latitude),
+                                                      longitude: Double(longitude)))
+    }
+    
+    private func calculateDistance() {
+        let firstLocation = CLLocation(latitude: self.firstPin.coordinate.latitude, longitude: self.firstPin.coordinate.longitude)
+        let secondLocation = CLLocation(latitude: self.secondPin.coordinate.latitude, longitude: self.secondPin.coordinate.longitude)
+        let kilometers = firstLocation.distance(from: secondLocation) / 1000
+        self.countLabel.text = String(format:"%.0f", kilometers.rounded()) + " km"
+    }
+}
+
+
+//MARK: - User Actions
+extension TrainViewController {
+    @IBAction func tapBackButton() {
+        self.navigationController!.popViewController(animated: true)
+    }
+}
+
+//MARK: - MKMapViewDelegate
+extension TrainViewController: MKMapViewDelegate { }

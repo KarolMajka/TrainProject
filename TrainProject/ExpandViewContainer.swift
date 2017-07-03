@@ -10,7 +10,7 @@ import UIKit
 
 class ExpandViewContainer: UIView {
 
-    lazy var subview: UIButton = {
+    fileprivate lazy var subview: UIButton = {
         [unowned self] in
         let subview = self.subviews[safe: 0] as! UIButton
         return subview
@@ -23,9 +23,7 @@ class ExpandViewContainer: UIView {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if self.subview.isHighlighted {
             self.subview.isHighlighted = false
-            guard let action = self.subview.actions(forTarget: subview.allTargets.first, forControlEvent: self.subview.allControlEvents)?.first else {
-                return
-            }
+            guard let action = self.subview.actions(forTarget: subview.allTargets.first, forControlEvent: self.subview.allControlEvents)?.first else { return }
             let selector = NSSelectorFromString(action)
             self.subview.sendAction(selector, to: nil, for: nil)
         }
@@ -45,11 +43,7 @@ class ExpandViewContainer: UIView {
     }
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        let view:UIView? = super.hitTest(point, with: event)
-        if view != nil {
-            return self
-        }
-        return nil
+        guard super.hitTest(point, with: event) != nil else { return nil }
+        return self
     }
 }
-

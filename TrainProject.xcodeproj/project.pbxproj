@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		13E66B5530E42A561CDF71A1 /* Pods_TrainProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75CC69826865C65BD34105D9 /* Pods_TrainProject.framework */; };
+		A354CAB71F0A677B00F55AFE /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A354CAB61F0A677B00F55AFE /* Array+Extension.swift */; };
+		A354CABA1F0A679600F55AFE /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A354CAB91F0A679600F55AFE /* String+Extension.swift */; };
 		A3B63E591F00EC9600EF9AFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B63E581F00EC9600EF9AFC /* AppDelegate.swift */; };
-		A3B63E5B1F00EC9600EF9AFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B63E5A1F00EC9600EF9AFC /* ViewController.swift */; };
+		A3B63E5B1F00EC9600EF9AFC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B63E5A1F00EC9600EF9AFC /* MainViewController.swift */; };
 		A3B63E5E1F00EC9600EF9AFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3B63E5C1F00EC9600EF9AFC /* Main.storyboard */; };
 		A3B63E601F00EC9600EF9AFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3B63E5F1F00EC9600EF9AFC /* Assets.xcassets */; };
 		A3B63E631F00EC9600EF9AFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3B63E611F00EC9600EF9AFC /* LaunchScreen.storyboard */; };
@@ -20,15 +22,15 @@
 		A3B63E811F01A51700EF9AFC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3B63E831F01A51700EF9AFC /* Localizable.strings */; };
 		A3B63E851F01A89600EF9AFC /* ExpandViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B63E841F01A89600EF9AFC /* ExpandViewContainer.swift */; };
 		A3B63E871F01A91E00EF9AFC /* TrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B63E861F01A91E00EF9AFC /* TrainViewController.swift */; };
-		A3B63E891F025B1E00EF9AFC /* ProtocolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B63E881F025B1E00EF9AFC /* ProtocolViewController.swift */; };
-		A3EB28371F038B7300B1CB83 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EB28361F038B7300B1CB83 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		75CC69826865C65BD34105D9 /* Pods_TrainProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrainProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A354CAB61F0A677B00F55AFE /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		A354CAB91F0A679600F55AFE /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		A3B63E551F00EC9600EF9AFC /* TrainProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B63E581F00EC9600EF9AFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A3B63E5A1F00EC9600EF9AFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A3B63E5A1F00EC9600EF9AFC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A3B63E5D1F00EC9600EF9AFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A3B63E5F1F00EC9600EF9AFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3B63E621F00EC9600EF9AFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,10 +42,8 @@
 		A3B63E821F01A51700EF9AFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A3B63E841F01A89600EF9AFC /* ExpandViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandViewContainer.swift; sourceTree = "<group>"; };
 		A3B63E861F01A91E00EF9AFC /* TrainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainViewController.swift; sourceTree = "<group>"; };
-		A3B63E881F025B1E00EF9AFC /* ProtocolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolViewController.swift; sourceTree = "<group>"; };
 		A3EB28171F02A9D700B1CB83 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A3EB28181F02A9D700B1CB83 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
-		A3EB28361F038B7300B1CB83 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A3EB283E1F03B1FA00B1CB83 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; };
 		B5758835D486ACDE5BD984B9 /* Pods-TrainProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrainProject/Pods-TrainProject.debug.xcconfig"; sourceTree = "<group>"; };
 		CF51BF89398D26C04E833B3A /* Pods-TrainProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrainProject/Pods-TrainProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -61,6 +61,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A354CAB51F0A674D00F55AFE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A354CAB61F0A677B00F55AFE /* Array+Extension.swift */,
+				A354CAB91F0A679600F55AFE /* String+Extension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		A354CABB1F0A68AB00F55AFE /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A3B63E5A1F00EC9600EF9AFC /* MainViewController.swift */,
+				A3B63E761F01016700EF9AFC /* SearchTextField.swift */,
+			);
+			name = MainViewController;
+			sourceTree = "<group>";
+		};
+		A354CABC1F0A6AD900F55AFE /* TrainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A3B63E861F01A91E00EF9AFC /* TrainViewController.swift */,
+			);
+			name = TrainViewController;
+			sourceTree = "<group>";
+		};
 		A3B63E4C1F00EC9600EF9AFC = {
 			isa = PBXGroup;
 			children = (
@@ -101,9 +127,8 @@
 		A3B63E6F1F00F12400EF9AFC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A3B63E5A1F00EC9600EF9AFC /* ViewController.swift */,
-				A3B63E881F025B1E00EF9AFC /* ProtocolViewController.swift */,
-				A3B63E861F01A91E00EF9AFC /* TrainViewController.swift */,
+				A354CABB1F0A68AB00F55AFE /* MainViewController */,
+				A354CABC1F0A6AD900F55AFE /* TrainViewController */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -120,7 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				A3B63E581F00EC9600EF9AFC /* AppDelegate.swift */,
-				A3B63E641F00EC9600EF9AFC /* Info.plist */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -138,8 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				A3B63E841F01A89600EF9AFC /* ExpandViewContainer.swift */,
-				A3B63E761F01016700EF9AFC /* SearchTextField.swift */,
-				A3EB28361F038B7300B1CB83 /* Extensions.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -147,11 +169,12 @@
 		A3B63E7D1F01A2BA00EF9AFC /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				A3B63E7E1F01A30500EF9AFC /* Resources */,
 				A3B63E701F00F12E00EF9AFC /* Models */,
 				A3B63E721F00F4DB00EF9AFC /* Views */,
 				A3B63E6E1F00F11C00EF9AFC /* Services */,
+				A354CAB51F0A674D00F55AFE /* Extensions */,
 				A3B63E731F00F53E00EF9AFC /* Helper */,
+				A3B63E7E1F01A30500EF9AFC /* Resources */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -159,6 +182,7 @@
 		A3B63E7E1F01A30500EF9AFC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A3B63E641F00EC9600EF9AFC /* Info.plist */,
 				A3B63E5F1F00EC9600EF9AFC /* Assets.xcassets */,
 				A3B63E831F01A51700EF9AFC /* Localizable.strings */,
 			);
@@ -309,13 +333,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3B63E6B1F00F09900EF9AFC /* RestManager.swift in Sources */,
-				A3B63E891F025B1E00EF9AFC /* ProtocolViewController.swift in Sources */,
 				A3B63E871F01A91E00EF9AFC /* TrainViewController.swift in Sources */,
+				A354CAB71F0A677B00F55AFE /* Array+Extension.swift in Sources */,
+				A354CABA1F0A679600F55AFE /* String+Extension.swift in Sources */,
 				A3B63E751F00F57B00EF9AFC /* RealmManager.swift in Sources */,
 				A3B63E6D1F00F11700EF9AFC /* TrainStation.swift in Sources */,
-				A3EB28371F038B7300B1CB83 /* Extensions.swift in Sources */,
 				A3B63E851F01A89600EF9AFC /* ExpandViewContainer.swift in Sources */,
-				A3B63E5B1F00EC9600EF9AFC /* ViewController.swift in Sources */,
+				A3B63E5B1F00EC9600EF9AFC /* MainViewController.swift in Sources */,
 				A3B63E591F00EC9600EF9AFC /* AppDelegate.swift in Sources */,
 				A3B63E771F01016700EF9AFC /* SearchTextField.swift in Sources */,
 			);

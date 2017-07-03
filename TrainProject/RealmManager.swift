@@ -9,8 +9,31 @@
 import Foundation
 import RealmSwift
 
+fileprivate protocol RealmTrainStationDelegate {
+    func updateData(trainStations model: [TrainStation])
+    func deleteTrainStations(all: Bool)
+    func haveExpiredTrainStations() -> Bool
+    func getTrainStations() -> [TrainStation]?
+}
+
 class RealmManager {
 
+    
+    //MARK: - Shared Instance
+    private init() { }
+    
+    static let sharedInstance : RealmManager = {
+        let instance = RealmManager()
+        return instance
+    }()
+
+}
+
+
+//MARK: - RealmTrainStationDelegate
+extension RealmManager: RealmTrainStationDelegate {
+
+    //MARK: Public methods
     public func updateData(trainStations model: [TrainStation]) {
         var realmTrainStations: [RealmTrainStation] = []
         for trainStation in model {
@@ -33,7 +56,6 @@ class RealmManager {
             }
         }
     }
-    
     
     public func haveExpiredTrainStations() -> Bool {
         let realm = try! Realm()
@@ -64,6 +86,8 @@ class RealmManager {
         return array
     }
     
+    
+    //MARK: - Private methods
     private func create(realmTrainStation model: TrainStation) -> RealmTrainStation  {
         let realmTrainStation = RealmTrainStation()
         realmTrainStation.id = model.id
